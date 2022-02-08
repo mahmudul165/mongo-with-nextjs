@@ -4,19 +4,13 @@ import { addToCart } from "../../redux/actions/cartActions";
 import Product from "../Product/Product";
 
 const Shop = (props) => {
-  console.log("object", props);
-  const products = [
-    { name: "dell", id: 1 },
-    { name: "lenevo", id: 2 },
-    { name: "hp", id: 3 },
-    { name: "asus", id: 4 },
-    { name: "apple", id: 5 },
-    { name: "duel", id: 6 },
-  ];
+  const product = props.product;
+  console.log("object is ", product);
+  const products = [];
   return (
     <div>
       <h1>This is Shop</h1>
-      {products.map((product) => (
+      {product.map((product) => (
         <Product key={product.id} product={product} />
       ))}
     </div>
